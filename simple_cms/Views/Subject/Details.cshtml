@@ -1,0 +1,42 @@
+﻿@model simple_cms.Models.Subject
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Subject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectPosition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectPosition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectVisible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectVisible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SubjectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
