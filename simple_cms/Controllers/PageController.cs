@@ -123,5 +123,20 @@ namespace simple_cms.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult RelatedPages(int? id)
+        {
+            List<Page> pg = new List<Page>();
+            List<Page> page = db.Pages.ToList();
+            foreach(var p in page)
+            {
+                if (id == p.SubjectId)
+                {
+                    pg.Add(p);
+                }
+            }
+            
+            return View(pg);
+        }
     }
 }

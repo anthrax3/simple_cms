@@ -105,6 +105,6 @@ C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_c
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\obj\Debug\simple_cms.csprojResolveAssemblyReference.cache
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\obj\Debug\simple_cms.dll
 C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\obj\Debug\simple_cms.pdb
+C:\Users\Jay Barbhaiya\Documents\Visual Studio 2013\Projects\simple_cms\simple_cms\obj\Debug\simple_cms.csprojResolveAssemblyReference.cache

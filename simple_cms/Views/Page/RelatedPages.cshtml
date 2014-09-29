@@ -1,0 +1,42 @@
+﻿@model IEnumerable<simple_cms.Models.Page>
+@{
+    ViewBag.Title = "RelatedPages";
+}
+
+<h2>Related Pages</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+           Page Name
+        </th>
+        <th>
+            Page Position
+        </th>
+        <th>
+           Page Visible
+        </th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>
+                @p.PageName
+            </td>
+            <td>
+                @p.PagePosition
+            </td>
+            <td>
+                @p.PageVisible
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = p.PageId }) |
+                @Html.ActionLink("Details", "Details", new { id = p.PageId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = p.PageId })
+            </td>
+        </tr>
+    }
+    </table>
+

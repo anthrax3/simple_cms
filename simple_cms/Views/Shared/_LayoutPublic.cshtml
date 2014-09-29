@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title - SRH Campus News</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <link href="~/Content/public.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="main">
+
+        <header>
+            <div id="strapline">
+                <div id="welcome_slogan">
+                    <h3>Campus News</h3>
+                </div><!--close welcome_slogan-->
+            </div><!--close strapline-->
+            <nav>
+                <div id="menubar">
+                    <ul id="nav">
+                        <li class="current"><a href="/Public/Index">Home</a></li>
+                    </ul>
+                </div><!--close menubar-->
+            </nav>
+        </header>
+
+        <div id="slideshow_container">
+            <div class="slideshow">
+                <ul class="slideshow">
+                    <li class="show"><img width="940" height="250" src="~/Content/logo.jpg" /></li>
+                </ul>
+            </div><!--close slideshow-->
+        </div><!--close slideshow_container-->
+
+        <div id="site_content">
+            @RenderBody();
+        </div><!--close site_content-->
+
+        <footer>
+            Developed by the Content Management System Group.
+        </footer>
+
+    </div><!--close main-->
+
+</body>
+</html>

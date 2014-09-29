@@ -1,0 +1,30 @@
+﻿@model simple_cms.Models.PublicData
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+<div class="sidebar_container">
+    <div class="sidebar">
+        <div class="sidebar_item">
+            @foreach (var subject in Model.subj)
+            {
+                <h3>@subject.SubjectName</h3>
+                foreach (var page in Model.pg)
+                {
+                    if (subject.SubjectId == page.SubjectId)
+                    {
+                        <p><a href="/Public/SubjectPage?id=@page.PageId">@page.PageName</a></p>
+                    }
+                }
+            }
+        </div><!--close sidebar_item-->
+    </div><!--close sidebar-->
+</div><!--close sidebar_container-->
+<div id="content">
+    <div class="content_item">
+
+    </div><!--close content_item-->
+</div><!--close content-->
+
+
