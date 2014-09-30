@@ -1,6 +1,6 @@
 ﻿@model simple_cms.Models.PublicData
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SubjectPage";
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
 }
 
@@ -9,12 +9,11 @@
         <div class="sidebar_item">
             @foreach (var subject in Model.subj)
             {
-                <h3>@subject.SubjectName</h3>
+                <h3>@subject.SubjectName</h3> 
                 foreach (var page in Model.pg)
                 {
                     if (subject.SubjectId == page.SubjectId)
                     {
-                        if(subject.SubjectVisible == true && page.PageVisible == true)
                         <p><a href="/Public/SubjectPage?id=@page.PageId">@page.PageName</a></p>
                     }
                 }
@@ -24,7 +23,8 @@
 </div><!--close sidebar_container-->
 <div id="content">
     <div class="content_item">
-
+        <h2>@Model.pageObj.PageName</h2>
+        <p>@Model.pageObj.PageContent</p>
     </div><!--close content_item-->
 </div><!--close content-->
 

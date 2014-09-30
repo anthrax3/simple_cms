@@ -36,9 +36,11 @@ namespace simple_cms.Controllers
         }
 
         // GET: Page/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            return View();
+            Page page = new Page();
+            page.SubjectId = id.Value;
+            return View(page);
         }
 
         // POST: Page/Create
@@ -126,17 +128,22 @@ namespace simple_cms.Controllers
 
         public ActionResult RelatedPages(int? id)
         {
-            List<Page> pg = new List<Page>();
+            PublicData pd = new PublicData();
+            pd.subject = db.Subjects.Find(id);
             List<Page> page = db.Pages.ToList();
-            foreach(var p in page)
+            foreach (var p in page)
             {
                 if (id == p.SubjectId)
                 {
-                    pg.Add(p);
+                    pd.pg.Add(p);
+                }
+                else
+                {
+                    pd.pageObj = p;
                 }
             }
-            
-            return View(pg);
+
+            return View(pd);
         }
     }
 }

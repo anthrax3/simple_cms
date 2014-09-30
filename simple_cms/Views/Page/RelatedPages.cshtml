@@ -1,4 +1,5 @@
-﻿@model IEnumerable<simple_cms.Models.Page>
+﻿@model simple_cms.Models.PublicData
+
 @{
     ViewBag.Title = "RelatedPages";
 }
@@ -18,25 +19,33 @@
            Page Visible
         </th>
     </tr>
-
-    @foreach (var p in Model)
+    @if (Model.pg.Count() > 0 )
     {
-        <tr>
-            <td>
-                @p.PageName
-            </td>
-            <td>
-                @p.PagePosition
-            </td>
-            <td>
-                @p.PageVisible
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = p.PageId }) |
-                @Html.ActionLink("Details", "Details", new { id = p.PageId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = p.PageId })
-            </td>
-        </tr>
-    }
-    </table>
+        @foreach (var p in Model.pg)
+        {
+            <tr>
+                <td>
+                    @p.PageName
+                </td>
+                <td>
+                    @p.PagePosition
+                </td>
+                <td>
+                    @p.PageVisible
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = p.PageId }) |
+                    @Html.ActionLink("Details", "Details", new { id = p.PageId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = p.PageId })
+                </td>
+            </tr>
+        }
+    }  
+
+        </table>
+
+        <p>@Html.ActionLink("+ Add new page", "Create", new { id = Model.subject.SubjectId })</p>
+    
+
+
 
