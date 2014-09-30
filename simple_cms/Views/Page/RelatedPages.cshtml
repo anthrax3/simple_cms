@@ -19,9 +19,9 @@
            Page Visible
         </th>
     </tr>
-    @if (Model.pg.Count() > 0 )
+    @if (Model.pageObj.SubjectId == Model.subject.SubjectId)
     {
-        @foreach (var p in Model.pg)
+        foreach (var p in Model.pg)
         {
             <tr>
                 <td>

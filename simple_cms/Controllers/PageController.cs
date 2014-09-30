@@ -130,19 +130,21 @@ namespace simple_cms.Controllers
         {
             PublicData pd = new PublicData();
             pd.subject = db.Subjects.Find(id);
+            pd.pg = new List<Page>();
             List<Page> page = db.Pages.ToList();
-            foreach (var p in page)
+            pd.pageObj = new Page();
+            pd.pageObj.SubjectId = id.Value;
+            if (pd.subject.SubjectId == pd.pageObj.SubjectId)
             {
-                if (id == p.SubjectId)
+                foreach (var p in page)
                 {
-                    pd.pg.Add(p);
-                }
-                else
-                {
-                    pd.pageObj = p;
+                    if (pd.subject.SubjectId == p.SubjectId)
+                    {
+                        pd.pg.Add(p);
+                        pd.pageObj = p;
+                    }
                 }
             }
-
             return View(pd);
         }
     }
