@@ -15,12 +15,14 @@ namespace simple_cms.Controllers
         private CMSContext db = new CMSContext();
 
         // GET: Subject
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Subjects.ToList());
         }
 
         // GET: Subject/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace simple_cms.Controllers
         }
 
         // GET: Subject/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +47,7 @@ namespace simple_cms.Controllers
         // POST: Subject/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SubjectId,SubjectName,SubjectPosition,SubjectVisible")] Subject subject)
@@ -59,6 +63,7 @@ namespace simple_cms.Controllers
         }
 
         // GET: Subject/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,6 +81,7 @@ namespace simple_cms.Controllers
         // POST: Subject/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "SubjectId,SubjectName,SubjectPosition,SubjectVisible")] Subject subject)
@@ -90,6 +96,7 @@ namespace simple_cms.Controllers
         }
 
         // GET: Subject/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +112,7 @@ namespace simple_cms.Controllers
         }
 
         // POST: Subject/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

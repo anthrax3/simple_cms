@@ -9,12 +9,18 @@
         <div class="sidebar_item">
             @foreach (var subject in Model.subj)
             {
-                <h3>@subject.SubjectName</h3> 
-                foreach (var page in Model.pg)
+                if (subject.SubjectVisible == true)
                 {
-                    if (subject.SubjectId == page.SubjectId)
+                    <h3>@subject.SubjectName</h3>
+                    foreach (var page in Model.pg)
                     {
-                        <p><a href="/Public/SubjectPage?id=@page.PageId">@page.PageName</a></p>
+                        if (subject.SubjectId == page.SubjectId)
+                        {
+                            if (page.PageVisible == true)
+                            {
+                                <p><a href="/Public/SubjectPage?id=@page.PageId">@page.PageName</a></p>
+                            }
+                        }
                     }
                 }
             }
